@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  music-bot:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2024-05-05T18:24:09.671686462-05:00"
+    description: Helm chart for jagrosh discord music bot
+    digest: 4cc65228582352a3fa3bbcfbcf2ef951486efd0691db273075ac2753d91c0aaa
+    name: music-bot
+    type: application
+    urls:
+    - music-bot-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-05-05T18:24:09.671354699-05:00"
