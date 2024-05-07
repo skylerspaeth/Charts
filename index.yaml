@@ -1,14 +1,25 @@
 apiVersion: v1
 entries:
+  minecraft:
+  - apiVersion: v2
+    appVersion: 1.16.5
+    created: "2024-05-06T22:47:18.611155773-05:00"
+    description: Helm chart for Spigot Minecraft server
+    digest: c1b0827b035acc8c88ee97c7af11e3f6e5879c010d1fc50f33a4c139ac10ad6f
+    name: minecraft
+    type: application
+    urls:
+    - charts/minecraft-0.1.0.tgz
+    version: 0.1.0
   music-bot:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2024-05-05T18:24:09.671686462-05:00"
+    created: "2024-05-06T22:47:18.61136509-05:00"
     description: Helm chart for jagrosh discord music bot
-    digest: 4cc65228582352a3fa3bbcfbcf2ef951486efd0691db273075ac2753d91c0aaa
+    digest: b7fe765c292c61fc175337be97a5050a93e5a00efe1c4371b931210411d521d1
     name: music-bot
     type: application
     urls:
-    - music-bot-0.1.0.tgz
+    - charts/music-bot-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-05T18:24:09.671354699-05:00"
+generated: "2024-05-06T22:47:18.610867373-05:00"
