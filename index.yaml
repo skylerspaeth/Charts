@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  lenin-bot:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-19T18:34:14.391709-05:00"
+    description: Helm chart for pineapplee discord Lenin bot
+    digest: f0b9fc6d00b7b2a3e516dd201b1907fb54755cf44cf4ced0980c83655d4c7b03
+    name: lenin-bot
+    type: application
+    urls:
+    - charts/lenin-bot-0.1.0.tgz
+    version: 0.1.0
   minecraft:
   - apiVersion: v2
     appVersion: 1.16.5
-    created: "2024-05-19T15:00:25.27762-05:00"
+    created: "2024-05-19T18:34:14.391933-05:00"
     description: Helm chart for Spigot Minecraft server
     digest: c1b0827b035acc8c88ee97c7af11e3f6e5879c010d1fc50f33a4c139ac10ad6f
     name: minecraft
@@ -14,7 +25,7 @@ entries:
   music-bot:
   - apiVersion: v2
     appVersion: 2.0.1
-    created: "2024-05-19T15:00:25.278102-05:00"
+    created: "2024-05-19T18:34:14.393492-05:00"
     description: Helm chart for jagrosh discord music bot
     digest: fb0ff8f056478ffc4a0d09760a841db486b3e1f6585ba875a916a9e74fae7fbc
     name: music-bot
@@ -24,7 +35,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2024-05-19T15:00:25.27788-05:00"
+    created: "2024-05-19T18:34:14.392152-05:00"
     description: Helm chart for jagrosh discord music bot
     digest: b7fe765c292c61fc175337be97a5050a93e5a00efe1c4371b931210411d521d1
     name: music-bot
@@ -32,4 +43,4 @@ entries:
     urls:
     - charts/music-bot-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-19T15:00:25.276266-05:00"
+generated: "2024-05-19T18:34:14.391253-05:00"
