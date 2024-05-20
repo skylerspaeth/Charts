@@ -11,4 +11,4 @@ To generate or update the `index.yaml` from the charts directory, run the follow
 ```
 
 ## Charts
-See [`charts/index.yaml`](charts/index.yaml) for a list of the charts currently included in the repo.
+See [`index.yaml`](index.yaml) for a list of the charts currently included in the repo.
