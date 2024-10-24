@@ -3,7 +3,7 @@ entries:
   lenin-bot:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2024-05-20T00:16:17.514913-05:00"
+    created: "2024-10-24T02:13:50.645304-05:00"
     description: Helm chart for pineapplee discord Lenin bot
     digest: c7a11aad7976a2f220f5eeafcaa407618c5cc537d88bd8f41ac39b2e5902705b
     name: lenin-bot
@@ -13,7 +13,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-05-20T00:16:17.514801-05:00"
+    created: "2024-10-24T02:13:50.644928-05:00"
     description: Helm chart for pineapplee discord Lenin bot
     digest: f0b9fc6d00b7b2a3e516dd201b1907fb54755cf44cf4ced0980c83655d4c7b03
     name: lenin-bot
@@ -24,7 +24,7 @@ entries:
   minecraft:
   - apiVersion: v2
     appVersion: 1.16.5
-    created: "2024-05-20T00:16:17.515161-05:00"
+    created: "2024-10-24T02:13:50.646954-05:00"
     description: Helm chart for Spigot Minecraft server
     digest: c1b0827b035acc8c88ee97c7af11e3f6e5879c010d1fc50f33a4c139ac10ad6f
     name: minecraft
@@ -34,8 +34,18 @@ entries:
     version: 0.1.0
   music-bot:
   - apiVersion: v2
+    appVersion: 2.0.2
+    created: "2024-10-24T02:13:50.647572-05:00"
+    description: Helm chart for jagrosh discord music bot
+    digest: 35999c7614f9b99165f251e465682e63336257857cef79ac3b9229a5c02e45ea
+    name: music-bot
+    type: application
+    urls:
+    - charts/music-bot-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 2.0.1
-    created: "2024-05-20T00:16:17.515596-05:00"
+    created: "2024-10-24T02:13:50.647467-05:00"
     description: Helm chart for jagrosh discord music bot
     digest: fb0ff8f056478ffc4a0d09760a841db486b3e1f6585ba875a916a9e74fae7fbc
     name: music-bot
@@ -45,7 +55,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2024-05-20T00:16:17.515356-05:00"
+    created: "2024-10-24T02:13:50.647235-05:00"
     description: Helm chart for jagrosh discord music bot
     digest: b7fe765c292c61fc175337be97a5050a93e5a00efe1c4371b931210411d521d1
     name: music-bot
@@ -53,4 +63,4 @@ entries:
     urls:
     - charts/music-bot-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-20T00:16:17.514122-05:00"
+generated: "2024-10-24T02:13:50.644158-05:00"
