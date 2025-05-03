@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lenin-discord-bot
+  annotations:
+    field.cattle.io/description: Discord Lenin bot, originally by pineapplee, Dockerfied by me
+  labels:
+    workload.user.cattle.io/workloadselector: apps.deployment-lenin-bot-lenin-discord-bot
+  namespace: lenin-bot
+spec:
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: apps.deployment-lenin-bot-lenin-discord-bot
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: apps.deployment-lenin-bot-lenin-discord-bot
+    spec:
+      containers:
+        - envFrom:
+            - secretRef:
+                name: lenin-discord-token
+                optional: false
+          image: "skylerspaeth/lenin-bot:{{ .Values.imageVersion }}"
+          imagePullPolicy: IfNotPresent
+          name: container-0
