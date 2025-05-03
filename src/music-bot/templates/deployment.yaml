@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jagrosh-music-bot
+  annotations:
+    field.cattle.io/description: Discord music bot, originally by Jagrosh, Dockerfied by me
+  labels:
+    workload.user.cattle.io/workloadselector: apps.deployment-music-bot-jagrosh-music-bot
+  namespace: music-bot
+spec:
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: apps.deployment-music-bot-jagrosh-music-bot
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: apps.deployment-music-bot-jagrosh-music-bot
+    spec:
+      containers:
+        - envFrom:
+            - configMapRef:
+                name: jagrosh-config
+                optional: false
+            - secretRef:
+                name: jagrosh-discord-token
+                optional: false
+          image: "skylerspaeth/music-bot:{{ .Values.imageVersion }}"
+          imagePullPolicy: IfNotPresent
+          name: container-0

@@ -1,0 +1,8 @@
+# Default values for music-bot.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+imageVersion: 1.0.1
+
+leninConfig:
+  encodedToken: 'YWJjZAo=' # must be overridden when using chart

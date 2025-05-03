@@ -1,0 +1,12 @@
+# Default values for music-bot.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+imageVersion: 2.0.2
+
+jagroshConfig:
+  encodedToken: 'YWJjZAo=' # must be overridden when using chart
+  gameStatus: 'Now Running In K8s!'
+  ownerId: '000000000000000000' # your discord user id
+  prefix: |
+    !cat
