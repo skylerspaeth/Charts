@@ -10,5 +10,11 @@ To generate or update the `index.yaml` from the charts directory, run the follow
 ./update-index.sh
 ```
 
+## Packaging a New Chart or Version of a Chart
+To package a chart, run the following command:
+```bash
+helm package src/<CHART_NAME> --destination charts
+```
+
 ## Charts
 See [`index.yaml`](index.yaml) for a list of the charts currently included in the repo.

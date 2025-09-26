@@ -34,9 +34,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
-            # - secretRef:
-            #     name: csgo-dedicated-server-token
-            #     optional: false
             - secretRef:
                 name: csgo-workshop-api-key
                 optional: false
