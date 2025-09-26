@@ -1,0 +1,15 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: csgo-server-datadir
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "csgo-server.labels" . | nindent 4 }}
+spec:
+  accessModes: [ "ReadWriteOnce" ]
+  resources:
+    requests:
+      storage: {{ .Values.persistence.size | quote }}
+  {{- if .Values.persistence.customStorageClass }}
+  storageClassName: {{ .Values.persistence.customStorageClass | quote }}
+  {{- end }}

@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "csgo-server.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "csgo-server.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "csgo-server.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.podSecurityContext }}
+      securityContext:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          {{- with .Values.securityContext }}
+          securityContext:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            # - secretRef:
+            #     name: csgo-dedicated-server-token
+            #     optional: false
+            - secretRef:
+                name: csgo-workshop-api-key
+                optional: false
+            - secretRef:
+                name: csgo-rcon-password
+                optional: false
+          env:
+            - name: CSGO_MAP
+              value: "{{ .Values.csgo.defaultMap }}"
+            - name: CSGO_PORT
+              value: "{{ .Values.service.port }}"
+            - name: SOURCEMOD_PLUGINS_ENABLED
+              value: "nolobbyreservation"
+            - name: CSGO_PARAMS
+              value: "-insecure"
+          ports:
+            - name: srcds
+              containerPort: {{ .Values.service.port }}
+              protocol: UDP
+            - name: srcds-rcon
+              containerPort: {{ .Values.rconService.port }}
+              protocol: TCP
+          {{- with .Values.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.volumes }}
+      volumes:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
