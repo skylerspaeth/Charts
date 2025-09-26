@@ -1,5 +1,4 @@
 csgo:
-  gameServerLoginToken: ""
   workshopApiKey: ""
   rconPassword: "changeme"
   defaultMap: "de_nuke"
